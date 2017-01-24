@@ -1,0 +1,33 @@
+---
+title: "Data Presentation"
+author: "James Ottavi"
+date: "1/23/2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Summary
+This analysis focuses on the relationship between trees:
+- Girth
+- Height
+- Weight
+Using the `trees` datset from the `datasets` package.
+
+## Data
+The data is split into three columns representing `girth`, `height`, and `volume` of the tree.
+```{r cars, echo = TRUE}
+head(trees)
+```
+
+## Interactive Plot
+```{r plotly, echo = FALSE, message=FALSE, fig.cap="The Graph", warning=FALSE}
+require(plotly)
+trees <- trees
+plot_ly(trees, x = ~Girth, y = ~Height, color = ~Volume, type = "scatter",
+        mode = "markers")
+```
+
+# Ze End
